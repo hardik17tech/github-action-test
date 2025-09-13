@@ -38,7 +38,8 @@ name: CI/CD for React App
 on:
   push:
     branches:
-      - 'prod_*'   # Only trigger for prod version branches (ex: prod_1.1.1)
+      # - 'prod_*' # Only trigger for prod version branches (ex: prod_1.1.1)
+      - 'wip-hardik'
   workflow_dispatch:
 
 permissions:
