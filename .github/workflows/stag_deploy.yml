@@ -34,7 +34,9 @@
 #           folder: build
 
 
-name: CI/CD for QA Server (GitHub Pages)
+
+
+name: CI/CD for QA (GitHub Pages)
 
 on:
   push:
@@ -62,10 +64,13 @@ jobs:
         run: npm ci
 
       - name: Build Project
-        run: npm run build
+        run: |
+          npm run build
+          mkdir -p deploy/qa
+          mv build/* deploy/qa/
 
-      - name: Deploy to QA GitHub Pages
+      - name: Deploy QA to GitHub Pages (subfolder)
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          branch: gh-pages-qa   # <-- separate branch for QA
-          folder: build
+          branch: gh-pages   # same branch as prod
+          folder: deploy
