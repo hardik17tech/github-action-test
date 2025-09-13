@@ -2,7 +2,7 @@ name: CI/CD for React App
 
 on:
   push:
-    branches: wip-hardik
+    branches: prod_1.1.1
   workflow_dispatch:
 
 permissions:
